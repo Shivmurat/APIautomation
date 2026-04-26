@@ -20,8 +20,11 @@ pipeline {
     }
 
     post {
+        
         always {
             echo 'Pipeline completed'
+            
+            junit 'target/surefire-reports/*.xml'
         }
         failure {
             echo 'Tests failed'
