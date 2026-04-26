@@ -12,7 +12,7 @@ public class AutomateChatGPTAPI {
     @Test(description = "Validate status code for GET list models")
     public void getListModels() {
         Response resp = given().
-                header("Authorization", "Bearer "+ OpenApiKey).
+                header("Authorization", "Bearer OpenApiKey").
                 when().get("https://api.openai.com/v1/models");
         assertEquals(resp.statusCode(), StatusCode.SUCCESS.code);
         System.out.println(resp.getBody().asString());
@@ -22,7 +22,7 @@ public class AutomateChatGPTAPI {
     @Test(description = "Validate status code for GET retrieve models")
     public void getRerieveModel() {
         Response resp = given().
-                header("Authorization", "Bearer "+ OpenApiKey).
+                header("Authorization", "Bearer OpenApiKey").
                 pathParam("model_id","babbage").
                 when().get("https://api.openai.com/v1/models/:model_id");
         assertEquals(resp.statusCode(), StatusCode.SUCCESS.code);
