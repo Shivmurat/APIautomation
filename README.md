@@ -2,7 +2,10 @@
 API Project with farmework Development contains all the test automation aloong with exposure to API methods
 
 This framework can be executed from local cmd and Jenkins too
+***Jenkins***
+Jenkins pipline is created 
 
+=======
 **How to execute from cmd/terminal?**
 
 ==> To run the testng.xml suite, add the testng.xml in pom.xml and thenrun "mvn clean test" from cmd or terminal
