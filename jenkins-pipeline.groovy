@@ -23,8 +23,19 @@ pipeline {
         
         always {
             echo 'Pipeline completed'
-            
-            junit 'target/surefire-reports/*.xml'
+        
+        // TestNG results
+        junit 'target/surefire-reports/*.xml'
+
+        // Extent HTML report (dynamic folder)
+        publishHTML([
+            allowMissing: true,
+            alwaysLinkToLastBuild: true,
+            keepAll: true,
+            reportDir: 'reports',
+            reportFiles: '*/API_Execution_Automation.html',
+            reportName: 'Extent Report'
+        ])    
         }
         failure {
             echo 'Tests failed'
